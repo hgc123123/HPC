@@ -7,16 +7,18 @@ to all the nodes, but only be able to run on the number of resources in it.
 The Partition QOS will override the job's QOS. If the opposite is desired you need to have the job's 
 QOS have the 'OverPartQOS' flag which will reverse the order of precedence.
 
-### how to delete a qos
-
-```
-sacctmgr delete qos zebra
-```
-
+### How to modify a qos
 To  clear a  previously set value use the modify command with a new value of -1 for each TRES id.
 
 ```
 saccmt modify qos zebra set GrpTRES=cpu=-1
+```
+
+
+### How to delete a qos
+
+```
+sacctmgr delete qos zebra
 ```
 
 ### How to add QOS in job_submit.lua

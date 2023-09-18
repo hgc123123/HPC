@@ -1,4 +1,4 @@
-##Partition QOS 
+## Partition QOS 
 A QOS can be attached to a partition. This means a partition will have all the same limits as a QOS. 
 This also gives the ability of a true 'floating' partition, meaning if you assign all the nodes to a 
 partition and then in the Partition's QOS limit the number of GrpTRES the partition will have access 

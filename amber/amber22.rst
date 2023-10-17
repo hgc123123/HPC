@@ -1,7 +1,9 @@
+========================
 Install Amber22 by INTEL
------------------------
+========================
 
 Typical error:
+--------------
 
 .. code:: bash
 
@@ -9,7 +11,7 @@ Typical error:
    198 | #include "longintrepr.h"
 
 How to solve it?
-
+----------------
 
 .. code:: bash
 
@@ -19,6 +21,7 @@ How to solve it?
    in amber22_src/cmake/UseMiniconda.cmake seems to solve the problem.
 
 Select Miniconda version
+------------------------
 
 .. code:: bash
 

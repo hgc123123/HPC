@@ -18,4 +18,10 @@ How to solve it?
    set(MINICONDA_INSTALLER_FILENAME "Miniconda${PYTHON_MAJOR_RELEASE}-...
    in amber22_src/cmake/UseMiniconda.cmake seems to solve the problem.
 
+Select Miniconda version
+
+.. code:: bash
+
+   https://docs.conda.io/projects/miniconda/en/latest/miniconda-other-installer-links.html
+
 Refer: http://archive.ambermd.org/202307/0083.html

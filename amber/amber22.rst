@@ -3,7 +3,7 @@ Install Amber22 by INTEL
 
 Typical error:
 
-..code:: bash
+.. code:: bash
 
    src/mpi4py.MPI.c:198:12: fatal error: longintrepr.h: No such file or directory
    198 | #include "longintrepr.h"

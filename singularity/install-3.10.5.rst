@@ -26,5 +26,7 @@
    git checkout --recurse-submodules v3.10.5
 
    ./mconfig
+   dnf install libseccomp-devel
+   dnf install glib2-devel
    make -C builddir
    sudo make -C builddir install

@@ -10,16 +10,16 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ### Installing
 
-In order to use this makefile you will need to make sure that the following
-dependencies are installed on your system:
-  - GNU make
-  - Pandoc
-  - LuaLaTeX
-  - DejaVu Sans fonts
+```
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-10.2.2-1.x86_64.rpm
+sudo rpm -Uvh grafana-enterprise-10.2.2-1.x86_64.rpm
 
-### Folder structure
+*remove*
+rpm -qa grafa | xargs rpm -e
+```
 
-Here's a folder structure for a Pandoc document:
+### Start
+
 
 ```
 my-document/     # Root directory.

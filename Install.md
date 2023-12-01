@@ -63,19 +63,80 @@ Refer Link: https://talk.plesk.com/threads/grafana-anonymous-auth-doesnt-work.36
 
 ### Installing
 
+Download the Prometheus package
+
+Go to the official Prometheus downloads page, and copy the URL of the Linux “tar” file.
+- [prometheus](https://prometheus.io/download/)
+
+Create Prometheus User and modify the permission
+```
+useradd --no-create-home --shell /bin/false prometheus
+mkdir /etc/prometheus /var/lib/prometheus
+chown prometheus:prometheus /etc/prometheus
+chown prometheus:prometheus /var/lib/prometheus
+tar -xvzf prometheus-2.42.0.linux-amd64.tar.gz
+mv prometheus-2.42.0.linux-amd64 prometheus
+cp prometheus/prometheus /usr/local/bin/
+cp prometheus/promtool /usr/local/bin/
+chown prometheus:prometheus /usr/local/bin/prometheus
+chown prometheus:prometheus /usr/local/bin/promtool
+cp -r prometheus/consoles /etc/prometheus
+cp -r prometheus/console_libraries /etc/prometheus
+chown -R prometheus:prometheus /etc/prometheus/consoles
+chown -R prometheus:prometheus /etc/prometheus/console_libraries
+```
+
+Add the following configurations to file */etc/prometheus/prometheus.yml*
+```
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+  - job_name: 'prometheus_master'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+```
+
+```
+chown prometheus:prometheus /etc/prometheus/prometheus.yml
+```
+
+Configure Prometheus Systemd service
+
+Add the following content to the file */etc/systemd/system/prometheus.service*
+
+```
+[Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/usr/local/bin/prometheus \
+--config.file /etc/prometheus/prometheus.yml \
+--storage.tsdb.path /var/lib/prometheus/ \
+--web.console.templates=/etc/prometheus/consoles \
+--web.console.libraries=/etc/prometheus/console_libraries
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+systemctl daemon-reload
+systemctl enable --now prometheus
+```
+
+
+
+- [Prometheus](https://github.com/hgc123123/HPC/blob/prometheus/Install.md)
+
 Edit the *metadata.yml* file to set configuration data:
 
-```yml
----
-title: My document title
-author: Ralph Huwiler
-rights:  Creative Commons Attribution 4.0 International
-language: en-US
-tags: [document, my-document, etc]
-abstract: |
-  Your summary text.
----
-```
 
 You can find the list of all available keys on [this
 page](http://pandoc.org/MANUAL.html#extension-yaml_metadata_block).
@@ -85,28 +146,6 @@ page](http://pandoc.org/MANUAL.html#extension-yaml_metadata_block).
 Creating a new chapter is as simple as creating a new markdown file in the
 *src/* folder; you'll end up with something like this:
 
-```
-src/01-introduction.md
-src/02-installation.md
-src/03-usage.md
-src/04-references.md
-```
-
-Pandoc and Make will join them automatically ordered by name; that's why the
-numeric prefixes are being used.
-
-All you need to specify for each chapter at least one title:
-
-```md
-# Introduction
-
-This is the first paragraph of the introduction chapter.
-
-## First
-
-This is the first subsection.
-
-## Second
 
 This is the second subsection.
 ```

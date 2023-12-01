@@ -35,6 +35,7 @@ netstat -anp | grafa
 ### Anonymout Access
 
 Changing both files:
+
 /etc/grafana/grafana.ini
 /usr/share/grafana/conf/defaults.ini
 

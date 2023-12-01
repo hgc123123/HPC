@@ -6,7 +6,7 @@ This repository contains a simple template for building
 [Pandoc](http://pandoc.org/) documents; Pandoc is a suite of tools to compile
 markdown files into readable files (PDF, EPUB, HTML...).
 
-## Prometheus
+## Grafana
 
 ### Installing
 
@@ -26,7 +26,11 @@ systemctl enable grafana-server.service
 systemctl start grafana-server.service
 ```
 
-### Setup generic data
+- [Grafana](https://grafana.com/grafana/download)
+
+## Grafana
+
+### Installing
 
 Edit the *metadata.yml* file to set configuration data:
 

@@ -26,9 +26,39 @@ systemctl enable grafana-server.service
 systemctl start grafana-server.service
 ```
 
+### Check port
+
+```
+netstat -anp | grafa
+```
+
+### Anonymout Access
+
+Changing both files:
+/etc/grafana/grafana.ini
+/usr/share/grafana/conf/defaults.ini
+
+to 
+
+```
+[auth.anonymous]
+enabled = true
+org_role = Admin
+org_name = Main Org.
+
+[auth]
+disable_login_form = true
+disable_login = true
+
+[auth.basic]
+enabled = false
+```
+Refer Link: https://talk.plesk.com/threads/grafana-anonymous-auth-doesnt-work.367584/
+
+
 - [Grafana](https://grafana.com/grafana/download)
 
-## Grafana
+## Prometheus
 
 ### Installing
 

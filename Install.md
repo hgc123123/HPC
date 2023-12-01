@@ -22,12 +22,8 @@ rpm -qa grafa | xargs rpm -e
 
 
 ```
-my-document/     # Root directory.
-|- build/        # Folder used to store builded (output) files.
-|- src/          # Markdowns files; one for each chapter.
-|- images/       # Images folder.
-|- metadata.yml  # Metadata content (title, author...).
-|- Makefile      # Makefile used for building our documents.
+systemctl enable grafana-server.service
+systemctl start grafana-server.service
 ```
 
 ### Setup generic data

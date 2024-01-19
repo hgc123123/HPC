@@ -41,7 +41,45 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 
 
-### Folder
+## Pima Indians
+
+  - Load Data
+  - Define PyTorch Model
+
+### Define The Model
+
+```
+class PimaClassifier(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.hidden1 = nn.Linear(8, 12)
+        self.act1 = nn.ReLU()
+        self.hidden2 = nn.Linear(12, 8)
+        self.act2 = nn.ReLU()
+        self.output = nn.Linear(8, 1)
+        self.act_output = nn.Sigmoid()
+ 
+    def forward(self, x):
+        x = self.act1(self.hidden1(x))
+        x = self.act2(self.hidden2(x))
+        x = self.act_output(self.output(x))
+        return x
+
+model = PimaClassifier()
+print(model)
+```
+The model printed will be:
+
+```
+PimaClassifier(
+  (hidden1): Linear(in_features=8, out_features=12, bias=True)
+  (act1): ReLU()
+  (hidden2): Linear(in_features=12, out_features=8, bias=True)
+  (act2): ReLU()
+  (output): Linear(in_features=8, out_features=1, bias=True)
+  (act_output): Sigmoid()
+)
+```
 
 Here's a folder structure for a Pandoc document:
 

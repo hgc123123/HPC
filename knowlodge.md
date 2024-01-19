@@ -10,6 +10,8 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 <img src="/gpfsnyu/home/gh2440/data/github/HPC/img/nueral_network.jpg">
 
+![Alt Text](nueral_network.jpg)
+
 ### 损失函数
 
 ``http://nj.itheima.com/news/20230815/104216.html``

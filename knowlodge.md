@@ -8,9 +8,10 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ## 基本概念
 
+### 神经网路公式推到
 ![Alt Text](./img/nueral_network_1.jpg)
 
-![nueral network](/gpfsnyu/home/gh2440/data/github/HPC/img/nueral_network_1.jpg)
+- [公式](https://blog.csdn.net/qq_52785473/article/details/127454390)
 
 ### 损失函数
 

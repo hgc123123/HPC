@@ -8,7 +8,7 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ## 基本概念
 
-### 神经网路公式推到
+### 神经网路公式推导
 ![Alt Text](./img/nueral_network_1.jpg)
 
 - [公式](https://blog.csdn.net/qq_52785473/article/details/127454390)
@@ -96,6 +96,34 @@ PimaClassifier(
 loss_fn = nn.BCELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 ```
+
+### Training a Model
+
+```
+n_epochs = 100
+batch_size = 10
+
+for epoch in range(n_epochs):
+    for i in range(0,len(x),batch_size):
+	Xbatch=X[i:i+batch_size]
+	y_pred=model(Xbatch)
+	ybatch=y[i:i+batch_size]
+	loss=loss_fn(y_pred,ybatch)
+	optimizer.zero_grad()
+	loss.backward()
+	optimizer.step()
+    print(f'Finished epoch {epoch}, latest loss {loss}')
+```
+### Evaluate the Model
+
+```
+with torch.no_grad():
+    y_pred = model(X)
+accuracy = (y_pred.round() == y).float().mean()
+print(f"Accuracy {accuracy}")
+```
+
+
 
 - [Ref](https://machinelearningmastery.com/develop-your-first-neural-network-with-pytorch-step-by-step/)
 

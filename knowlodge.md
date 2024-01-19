@@ -97,6 +97,24 @@ loss_fn = nn.BCELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 ```
 
+- [Ref](https://machinelearningmastery.com/develop-your-first-neural-network-with-pytorch-step-by-step/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Here's a folder structure for a Pandoc document:
 
 ```

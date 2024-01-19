@@ -97,7 +97,7 @@ loss_fn = nn.BCELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 #损失函数，上图推导公式使用的差的平方
-#优化器，上图推导公式使用的随机梯度下降法
+#优化器，上图推导公式使用的随机梯度下降法(SGD)
 ```
 
 ### Training a Model

@@ -8,8 +8,6 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ## 基本概念
 
-<img src="/gpfsnyu/home/gh2440/data/github/HPC/img/nueral_network.jpg">
-
 ![Alt Text](/gpfsnyu/home/gh2440/data/github/HPC/img/nueral_network_1.jpg)
 
 ### 损失函数

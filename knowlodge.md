@@ -8,7 +8,7 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ## 基本概念
 
-![Alt Text](/gpfsnyu/home/gh2440/data/github/HPC/img/nueral_network_1.jpg)
+![Alt Text](./img/nueral_network_1.jpg)
 
 ![nueral network](/gpfsnyu/home/gh2440/data/github/HPC/img/nueral_network_1.jpg)
 

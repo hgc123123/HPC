@@ -8,6 +8,8 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ## 基本概念
 
+<img src="/gpfsnyu/home/gh2440/data/github/HPC/img/nueral_network.jpg">
+
 ### 损失函数
 
 ``http://nj.itheima.com/news/20230815/104216.html``
@@ -45,6 +47,10 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
   - Load Data
   - Define PyTorch Model
+  - Define Loss Function and Optimizers
+  - Run a Training Loop
+  - Evaluate the Model
+  - Make Predictions
 
 ### Define The Model
 
@@ -79,6 +85,13 @@ PimaClassifier(
   (output): Linear(in_features=8, out_features=1, bias=True)
   (act_output): Sigmoid()
 )
+```
+
+### Define Loss Function and Optimizers
+
+```
+loss_fn = nn.BCELoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 ```
 
 Here's a folder structure for a Pandoc document:

@@ -62,7 +62,7 @@ class PimaClassifier(nn.Module):
     def __init__(self):
         super().__init__()
         self.hidden1 = nn.Linear(8, 12)
-        self.act1 = nn.ReLU()
+        self.act1 = nn.ReLU() # ReLU是一种激活函数，表示：max(0,W^t*x+b)
         self.hidden2 = nn.Linear(12, 8)
         self.act2 = nn.ReLU()
         self.output = nn.Linear(8, 1)

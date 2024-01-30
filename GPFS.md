@@ -1,4 +1,4 @@
-# Pandoc document template
+#Pandoc document template
 
 ## Description
 
@@ -15,17 +15,14 @@ mmlsquota -j xspace gpfs
 https://www.ibm.com/docs/en/storage-scale/5.1.4?topic=reference-mmsetquota-command
 ```
 
-### Folder structure
+### set quota for fileset
 
 Here's a folder structure for a Pandoc document:
 
 ```
-my-document/     # Root directory.
-|- build/        # Folder used to store builded (output) files.
-|- src/          # Markdowns files; one for each chapter.
-|- images/       # Images folder.
-|- metadata.yml  # Metadata content (title, author...).
-|- Makefile      # Makefile used for building our documents.
+mmlsfileset gpfs
+mmsetquota gpfs:spa --block 200G:200G
+https://www.ibm.com/docs/en/storage-scale/5.1.4?topic=reference-mmsetquota-command
 ```
 
 ### Setup generic data

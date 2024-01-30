@@ -12,6 +12,7 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ```
 mmlsquota -j xspace gpfs
+https://www.ibm.com/docs/en/storage-scale/5.1.4?topic=reference-mmsetquota-command
 ```
 
 ### Folder structure

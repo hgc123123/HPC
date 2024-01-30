@@ -23,6 +23,15 @@ Here's a folder structure for a Pandoc document:
 mmlsfileset gpfs
 mmsetquota gpfs:spa --block 200G:200G
 https://www.ibm.com/docs/en/storage-scale/5.1.4?topic=reference-mmsetquota-command
+
+
+
+
+                         Block Limits                                    |     File Limits
+Filesystem type             KB      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+gpfs       FILESET  432247231488 429496729600 440234147840     432768   4 days | 107770486       0        0      157     none 
+
+mmsetquota gpfs:xsp --block 600T:605T
 ```
 
 ### Setup generic data

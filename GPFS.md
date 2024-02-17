@@ -34,6 +34,15 @@ gpfs       FILESET  432247231488 429496729600 440234147840     432768   4 days |
 mmsetquota gpfs:xsp --block 600T:605T
 ```
 
+
+
+```
+mmsetquota gpfs:home  -u y51 --block 100G:105G
+mmsetquota gpfs:home  --user 51 --block 100G:105G
+mmedquota -u gpfs:xs:h8
+```
+
+
 ### Setup generic data
 
 Edit the *metadata.yml* file to set configuration data:

@@ -14,9 +14,9 @@ markdown files into readable files (PDF, EPUB, HTML...).
 https://open.xdmod.org/10.5/resource-manager-slurm.html
   
 
-### Folder structure
+### Checking job Efficiency
 
-Here's a folder structure for a Pandoc document:
+https://www.osc.edu/supercomputing/knowledge-base/xdmod_tool/xdmod_checking_job_efficiency
 
 ```
 my-document/     # Root directory.

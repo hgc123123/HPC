@@ -8,10 +8,12 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ## Usage
 
-###  
+###  Command
 
-
-https://open.xdmod.org/10.5/resource-manager-slurm.html
+```
+ansible webserver -i ./allHosts -m command -a "ls /opt"
+ansible webserver -i ./allHosts -m yum -a "state=present name=wget"
+```
   
 
 ### SSH into other node without inputing yes

@@ -8,23 +8,39 @@ markdown files into readable files (PDF, EPUB, HTML...).
 
 ## Usage
 
-### How to pull data from Slurm's sacct 
+###  
 
 
 https://open.xdmod.org/10.5/resource-manager-slurm.html
   
 
-### Checking job Efficiency
+### SSH into other node without inputing yes
 
 https://www.osc.edu/supercomputing/knowledge-base/xdmod_tool/xdmod_checking_job_efficiency
 
 ```
-my-document/     # Root directory.
-|- build/        # Folder used to store builded (output) files.
-|- src/          # Markdowns files; one for each chapter.
-|- images/       # Images folder.
-|- metadata.yml  # Metadata content (title, author...).
-|- Makefile      # Makefile used for building our documents.
+#!/usr/bin/expect
+
+#set other_nodes {"gpu148" "compute120" "compute121" "gpu182"}
+# Loop through each node
+foreach node $other_nodes {
+    # Spawn SSH session
+    spawn ssh root@$node
+    expect {
+        "yes/no" {
+            send "yes\r"
+            send "exit\r"
+            expect eof
+        }
+        "# "{
+            send "ls\r"
+            send "exit\r"
+            expect eof
+        }
+
+    }
+}
+
 ```
 
 ### Setup generic data

@@ -13,6 +13,7 @@ markdown files into readable files (PDF, EPUB, HTML...).
 ```
 ansible webserver -i ./allHosts -m command -a "ls /opt"
 ansible webserver -i ./allHosts -m yum -a "state=present name=wget"
+ansible webserver -i ./allHosts -m yum -a "state=present name=pcp"
 ```
   
 

@@ -42,6 +42,20 @@ mmsetquota gpfs:home  --user 51 --block 100G:105G
 mmedquota -u gpfs:xs:h8
 ```
 
+## Mount
+
+```
+Run 'mmaddnode -N new.node.hostname' to add the node
+Run 'mmchlicense {client|server} --accept -N new.node.hostname' to assign a license
+Run mmlscluster and mmlslicense to check the cluster
+Run 'mmstartup -N new.node.hostname' to start GPFS on the new node
+
+Wait a few minutes for the node to initialise. GPFS may be mounted automatically in which case you do not need to do anything, otherwise run 'mmmount filesystem-name -N new.node.hostname' to enable the mount on the new node (this will automatically add an entry to /etc/fstab)
+You can check the state of all nodes by running 'mmgetstate -a'
+
+'mmmount gpfs /filesetname -N new.node.hostname'
+
+```
 
 ### Setup generic data
 

@@ -8,6 +8,7 @@ source activate pytorch
 #Install pytorch by pip or conda
 ```
 pip install torch==2.0.0+cu117 torchvision==0.15.1+cu117 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu117
+https://pytorch.org/
 
 or
 
